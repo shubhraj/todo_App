@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script>
+    function fetchData() {
+
+      var xmlhttp=new XMLHttpRequest();
+      xmlhttp.onreadystatechange=function() {
+
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+
+          var jsonResponseObject =JSON.parse(xmlhttp.responseText);
+
+          if(jsonResponseObject!=null) {
+            jsonResponseObject.forEach(function(doc){
+              console.dir(  doc.note);
+
+              document.getElementById("txtHint").innerHTML+="</br>"+doc.note +"  ---> " + doc.date;
+            })
+          }
+        }
+      }
+      xmlhttp.open("GET","userFetchData?q=abcd",true);
+      xmlhttp.send();
+
+    }
+  </script>
+
+
+</head>
+<body onload="fetchData()">
+<h1><%= title %></h1>
+<form action="/logOutUser" method="post"  >
+  <input type="hidden" name="logOutme" value="true">
+  <input type="submit" value="log out">
+</form>
+
+
+<p>Welcome to Home <%= username %></p>
+
+<label><b> Here is your to do list </b></label>
+<p>
+  </br> 1) study well
+  </br> 2) study hard
+</p>
+
+
+
+<label><b> here is loaded data </b></label>
+<span id="txtHint"></span>
+</body>
+</html>

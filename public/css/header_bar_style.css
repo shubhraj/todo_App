@@ -1,0 +1,171 @@
+/*
+** Fonts & Variables
+***********************************************************/
+@import url("http://fonts.googleapis.com/css?family=Cookie");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+/*
+** Reset
+***********************************************************/
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  height: 100%;
+  font: 13px/1 'Open Sans', sans-serif;
+  color: #999;
+  background: #eee;
+}
+
+a {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+[placeholder]::-webkit-input-placeholder {
+  color: #999;
+}
+
+[placeholder]:hover::-webkit-input-placeholder {
+  color: #ddd;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+/*
+** Layout
+***********************************************************/
+.header {
+  //margin-top: -20px;
+  margin-bottom:20px;
+  height: 50px;
+  background:white;
+  color: #3f4550;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+  box-shadow: #212121;
+
+}
+
+.header .title {
+  padding: 0 30px;
+  font: 25px/50px Cookie, sans-serif;
+}
+
+.header .user {
+  position: absolute;
+  top: 17px;
+  right: 30px;
+  font-weight: 600;
+}
+
+.header .name,
+.header .logout {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.header .name:before,
+.header .logout:before {
+  content: '\f007';
+  font-family: fontawesome;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header .name {
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 1px solid #ccc;
+}
+
+.header .logout:before {
+  content: '\f023';
+}
+
+.main {
+  padding: 100px 20px;
+}
+
+.main .search {
+  position: relative;
+  min-width: 300px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.main .search input {
+  width: calc(100% - 100px);
+  height: 50px;
+  padding: 15px;
+  font-size: 14px;
+  background: none;
+}
+
+.main .search .find,
+.main .search .add {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 48px;
+  text-align: center;
+  color: #999;
+  border-left: 1px solid #eee;
+}
+
+.main .search .find {
+  right: 50px;
+  font-family: fontawesome;
+  font-size: 18px;
+}
+
+.main .search .add {
+  right: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.main .search .find:hover,
+.main .search .add:hover {
+  color: #59d;
+}
